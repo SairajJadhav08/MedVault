@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Register - MedVault{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1><i class="fas fa-heartbeat"></i> MedVault</h1>
+            <h2>Create Account</h2>
+            <p>Join us to start managing your health</p>
+        </div>
+
+        <form method="POST" class="auth-form">
+            <div class="form-group">
+                <label for="username">
+                    <i class="fas fa-user"></i> Username
+                </label>
+                <input type="text" id="username" name="username" required 
+                       placeholder="Choose a username (min 3 characters)"
+                       minlength="3">
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="Create a password (min 6 characters)"
+                       minlength="6">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-user-plus"></i> Create Account
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? 
+                <a href="{{ url_for('login') }}">Sign in here</a>
+            </p>
+            <p>
+                <a href="{{ url_for('landing') }}">← Back to Home</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
